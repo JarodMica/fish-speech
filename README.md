@@ -63,6 +63,19 @@ OpenAudio-S1 comes in two versions: **OpenAudio-S1** and **OpenAudio-S1-mini**. 
 
 Visit the [OpenAudio website](https://openaudio.com/blogs/s1) for blog & tech report.
 
+## Setup and Install
+1. Clone the repo
+    ```
+    git clone https://github.com/JarodMica/fish-speech.git
+    cd .\fish-speech\
+    ```
+2. Install dependencies, download models, and then run the gradio webui
+    ```
+    uv sync
+    uv run .\tools\download_models.py
+    uv run .\tools\run_webui.py    
+    ```
+
 ## Highlights ✨
 
 ### **Excellent TTS quality**
