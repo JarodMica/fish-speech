@@ -1,160 +1,193 @@
-# OpenAudio (原 Fish-Speech)
-
 <div align="center">
+<h1>Fish Speech</h1>
 
-<div align="center">
+<p><a href="../en/">English</a> | <strong>简体中文</strong> | <a href="../pt/">Portuguese</a> | <a href="../ja/">日本語</a> | <a href="../ko/">한국어</a> | <a href="../ar/">العربية</a> | <a href="../es/">Español</a></p>
 
-<img src="../assets/openaudio.jpg" alt="OpenAudio" style="display: block; margin: 0 auto; width: 35%;"/>
-
+<a href="https://www.producthunt.com/products/fish-speech?embed=true&utm_source=badge-top-post-badge&utm_medium=badge&utm_source=badge-fish&#0045;audio&#0045;s1" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=1023740&theme=light&period=daily&t=1761164814710" alt="Fish&#0032;Audio&#0032;S1 - Expressive&#0032;Voice&#0032;Cloning&#0032;and&#0032;Text&#0045;to&#0045;Speech | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+<a href="https://trendshift.io/repositories/7014" target="_blank">
+    <img src="https://trendshift.io/api/badge/repositories/7014" alt="fishaudio%2Ffish-speech | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
+</a>
 </div>
 
-<strong>先进的文字转语音模型系列</strong>
+<br>
 
-<div>
-<a target="_blank" href="https://discord.gg/Es5qTB9BcN">
-<img alt="Discord" src="https://img.shields.io/discord/1214047546020728892?color=%23738ADB&label=Discord&logo=discord&logoColor=white&style=flat-square"/>
-</a>
-<a target="_blank" href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=jCKlUP7QgSm9kh95UlBoYv6s1I-Apl1M&authKey=xI5ttVAp3do68IpEYEalwXSYZFdfxZSkah%2BctF5FIMyN2NqAa003vFtLqJyAVRfF&noverify=0&group_code=593946093">
-<img alt="QQ" src="https://img.shields.io/badge/QQ Group-%2312B7F5?logo=tencent-qq&logoColor=white&style=flat-square"/>
-</a>
-<a target="_blank" href="https://hub.docker.com/r/fishaudio/fish-speech">
-<img alt="Docker" src="https://img.shields.io/docker/pulls/fishaudio/fish-speech?style=flat-square&logo=docker"/>
-</a>
-</div>·
-
-<strong>立即试用：</strong> <a href="https://fish.audio">Fish Audio Playground</a> | <strong>了解更多：</strong> <a href="https://openaudio.com">OpenAudio 网站</a>
-
+<div align="center">
+    <img src="https://count.getloli.com/get/@fish-speech?theme=asoul" /><br>
 </div>
+
+<br>
+
+<div align="center">
+    <a target="_blank" href="https://discord.gg/Es5qTB9BcN">
+        <img alt="Discord" src="https://img.shields.io/discord/1214047546020728892?color=%23738ADB&label=Discord&logo=discord&logoColor=white&style=flat-square"/>
+    </a>
+    <a target="_blank" href="https://hub.docker.com/r/fishaudio/fish-speech">
+        <img alt="Docker" src="https://img.shields.io/docker/pulls/fishaudio/fish-speech?style=flat-square&logo=docker"/>
+    </a>
+    <a target="_blank" href="https://pd.qq.com/s/bwxia254o">
+      <img alt="QQ Channel" src="https://img.shields.io/badge/QQ-blue?logo=tencentqq">
+    </a>
+</div>
+
+<div align="center">
+    <a target="_blank" href="https://huggingface.co/fishaudio/s2">
+        <img alt="HuggingFace Model" src="https://img.shields.io/badge/🤗%20-models-orange"/>
+    </a>
+    <a target="_blank" href="https://fish.audio/blog/fish-audio-open-sources-s2/">
+        <img alt="Fish Audio Blog" src="https://img.shields.io/badge/Blog-Fish_Audio_S2-1f7a8c?style=flat-square&logo=readme&logoColor=white"/>
+    </a>
+    <a target="_blank" href="https://arxiv.org/abs/2603.08823">
+        <img alt="Paper | Technical Report" src="https://img.shields.io/badge/Paper-Technical_Report-b31b1b?style=flat-square"/>
+    </a>
+</div>
+
+!!! info "许可声明"
+    此代码库及其相关的模型权重均在 **FISH AUDIO RESEARCH LICENSE** 下发布。更多详情请参考 [LICENSE](https://github.com/fishaudio/fish-speech/blob/main/LICENSE)。
+
+!!! warning "法律免责声明"
+    我们不对代码库的任何非法使用承担责任。请参考您当地关于 DMCA 和其他相关法律的法规。
+
+## 快速开始
+
+### 文档入口
+
+这里是 Fish Audio S2 的官方文档，请按照说明轻松入门。
+
+- [安装](https://speech.fish.audio/zh/install/)
+- [命令行推理](https://speech.fish.audio/zh/inference/)
+- [WebUI 推理](https://speech.fish.audio/zh/inference/)
+- [服务端推理](https://speech.fish.audio/zh/server/)
+- [Docker 部署](https://speech.fish.audio/zh/install/)
+
+> [!IMPORTANT]
+> **如需使用 SGLang Server，请参考 [SGLang-Omni README](https://github.com/sgl-project/sglang-omni/blob/main/sglang_omni/models/fishaudio_s2_pro/README.md)。**
+
+### LLM Agent 指南
+
+```
+请先阅读 https://speech.fish.audio/zh/install/ ，并按文档安装和配置 Fish Audio S2。
+```
+
+## Fish Audio S2
+**在开源与闭源方案中都处于领先水平的文本转语音系统**
+
+Fish Audio S2 是由 [Fish Audio](https://fish.audio/) 开发的最新模型。S2 在约 50 种语言、超过 1000 万小时音频数据上完成训练，并结合强化学习对齐与双自回归架构，能够生成自然、真实且情感丰富的语音。
+
+S2 支持通过自然语言标签（如 `[laugh]`、`[whispers]`、`[super happy]`）对韵律和情绪进行细粒度行内控制，同时原生支持多说话人和多轮生成。
+
+请访问 [Fish Audio 网站](https://fish.audio/) 体验在线演示，并阅读[博客文章](https://fish.audio/blog/fish-audio-open-sources-s2/)和[技术报告](https://arxiv.org/abs/2603.08823)了解更多细节。
+
+### 模型变体
+
+| 模型 | 大小 | 可用性 | 描述 |
+|------|------|-------------|-------------|
+| S2-Pro | 4B 参数 | [HuggingFace](https://huggingface.co/fishaudio/s2-pro) | 功能齐全的旗舰模型，具有最高质量和稳定性 |
+
+有关模型的更多详情，请参见[技术报告](https://arxiv.org/abs/2411.01156)。
+
+## 基准测试结果
+
+| 基准 | Fish Audio S2 |
+|------|------|
+| Seed-TTS Eval — WER（中文） | **0.54%**（总体最佳） |
+| Seed-TTS Eval — WER（英文） | **0.99%**（总体最佳） |
+| Audio Turing Test（含指令） | **0.515** 后验均值 |
+| EmergentTTS-Eval — 胜率 | **81.88%**（总体最高） |
+| Fish Instruction Benchmark — TAR | **93.3%** |
+| Fish Instruction Benchmark — 质量 | **4.51 / 5.0** |
+| 多语言（MiniMax Testset）— 最佳 WER | **24** 种语言中的 **11** 种 |
+| 多语言（MiniMax Testset）— 最佳 SIM | **24** 种语言中的 **17** 种 |
+
+在 Seed-TTS Eval 上，S2 在所有已评估模型（包括闭源系统）中实现了最低 WER：Qwen3-TTS（0.77/1.24）、MiniMax Speech-02（0.99/1.90）、Seed-TTS（1.12/2.25）。在 Audio Turing Test 上，S2 的 0.515 相比 Seed-TTS（0.417）提升 24%，相比 MiniMax-Speech（0.387）提升 33%。在 EmergentTTS-Eval 中，S2 在副语言学（91.61% 胜率）、疑问句（84.41%）和句法复杂度（83.39%）等维度表现尤为突出。
+
+## 亮点
+
+<img src="../assets/totalability.png" width=200%>
+
+### 通过自然语言进行细粒度行内控制
+
+Fish Audio S2 支持在文本中的特定词或短语位置直接嵌入自然语言指令，从而对语音生成进行局部控制。与依赖固定预设标签不同，S2 接受自由形式的文本描述，例如 [whisper in small voice]、[professional broadcast tone] 或 [pitch up]，实现词级别的开放式表达控制。
+
+### 双自回归架构（Dual-Autoregressive）
+
+S2 基于仅解码器 Transformer，并结合 RVQ 音频编解码器（10 个码本，约 21 Hz 帧率）。Dual-AR 架构将生成拆分为两个阶段：
+
+- **Slow AR** 沿时间轴运行，预测主语义码本。
+- **Fast AR** 在每个时间步生成剩余 9 个残差码本，用于重建细粒度声学细节。
+
+这种非对称设计（时间轴 4B 参数、深度轴 400M 参数）在保持音频保真度的同时，提高了推理效率。
+
+### 强化学习对齐
+
+S2 使用 Group Relative Policy Optimization（GRPO）进行后训练对齐。用于过滤和标注训练数据的同一批模型被直接复用为 RL 的奖励模型，从而避免了预训练数据分布与后训练目标之间的不匹配。奖励信号综合了语义准确性、指令遵循、声学偏好评分与音色相似度。
+
+### 基于 SGLang 的生产级流式推理
+
+由于 Dual-AR 架构在结构上与标准自回归 LLM 同构，S2 可以直接继承 SGLang 提供的 LLM 原生服务优化能力，包括连续批处理、分页 KV Cache、CUDA Graph Replay 与基于 RadixAttention 的前缀缓存。
+
+在单张 NVIDIA H200 GPU 上：
+
+- **实时因子（RTF）：** 0.195
+- **首音频延迟：** 约 100 ms
+- **吞吐：** 在 RTF 低于 0.5 的情况下达到 3,000+ acoustic tokens/s
+
+### 多语言支持
+
+Fish Audio S2 支持高质量的多语言文本转语音，无需音素或特定语言的预处理。包括：
+
+**英语、中文、日语、韩语、阿拉伯语、德语、法语...**
+
+**以及更多！**
+
+列表正在不断扩大，请查看 [Fish Audio](https://fish.audio/) 获取最新发布。
+
+### 原生多说话人生成
+
+<img src="../assets/chattemplate.png" width=200%>
+
+Fish Audio S2 允许用户上传包含多个说话人的参考音频，模型将通过 `<|speaker:i|>` 令牌处理每个说话人的特征。之后您可以通过说话人 ID 令牌控制模型的表现，从而实现一次生成中包含多个说话人。再也不需要像以前那样针对每个说话人都单独上传参考音频与生成语音了。
+
+### 多轮对话生成
+
+得益于模型上下文的扩展，我们的模型现在可以借助上文的信息提高后续生成内容的表现力，从而提升内容的自然度。
+
+### 快速语音克隆
+
+Fish Audio S2 支持使用短参考样本（通常为 10-30 秒）进行准确的语音克隆。模型可以捕捉音色、说话风格和情感倾向，无需额外微调即可生成逼真且一致的克隆语音。
+如需使用 SGLang Server，请参考 [SGLang-Omni README](https://github.com/sgl-project/sglang-omni/blob/main/sglang_omni/models/fishaudio_s2_pro/README.md) 。
 
 ---
 
-!!! note "许可证声明"
-    此代码库在 **Apache 许可证** 下发布，所有模型权重在 **CC-BY-NC-SA-4.0 许可证** 下发布。更多详情请参阅 [LICENSE](LICENSE)。
+## 致谢
 
-!!! warning "法律免责声明"
-    我们不对代码库的任何非法使用承担责任。请参考您所在地区有关 DMCA 和其他相关法律的规定。
+- [VITS2 (daniilrobnikov)](https://github.com/daniilrobnikov/vits2)
+- [Bert-VITS2](https://github.com/fishaudio/Bert-VITS2)
+- [GPT VITS](https://github.com/innnky/gpt-vits)
+- [MQTTS](https://github.com/b04901014/MQTTS)
+- [GPT Fast](https://github.com/pytorch-labs/gpt-fast)
+- [GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS)
+- [Qwen3](https://github.com/QwenLM/Qwen3)
 
-## **介绍**
+## 技术报告
 
-我们很高兴地宣布，我们已经更名为 **OpenAudio** - 推出全新的先进文字转语音模型系列，在 Fish-Speech 的基础上进行了重大改进并增加了新功能。
+```bibtex
+@misc{fish-speech-v1.4,
+      title={Fish-Speech: Leveraging Large Language Models for Advanced Multilingual Text-to-Speech Synthesis},
+      author={Shijia Liao and Yuxuan Wang and Tianyu Li and Yifan Cheng and Ruoyi Zhang and Rongzhi Zhou and Yijin Xing},
+      year={2024},
+      eprint={2411.01156},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD},
+      url={https://arxiv.org/abs/2411.01156},
+}
 
-**Openaudio-S1-mini**: [博客](https://openaudio.com/blogs/s1); [视频](https://www.youtube.com/watch?v=SYuPvd7m06A); [Hugging Face](https://huggingface.co/fishaudio/openaudio-s1-mini);
-
-**Fish-Speech v1.5**: [视频](https://www.bilibili.com/video/BV1EKiDYBE4o/); [Hugging Face](https://huggingface.co/fishaudio/fish-speech-1.5);
-
-## **亮点**
-
-### **优秀的 TTS 质量**
-
-我们使用 Seed TTS 评估指标来评估模型性能，结果显示 OpenAudio S1 在英文文本上达到了 **0.008 WER** 和 **0.004 CER**，明显优于以前的模型。（英语，自动评估，基于 OpenAI gpt-4o-转录，说话人距离使用 Revai/pyannote-wespeaker-voxceleb-resnet34-LM）
-
-| 模型 | 词错误率 (WER) | 字符错误率 (CER) | 说话人距离 |
-|:-----:|:--------------------:|:-------------------------:|:----------------:|
-| **S1** | **0.008** | **0.004** | **0.332** |
-| **S1-mini** | **0.011** | **0.005** | **0.380** |
-
-### **TTS-Arena2 最佳模型**
-
-OpenAudio S1 在 [TTS-Arena2](https://arena.speechcolab.org/) 上获得了 **#1 排名**，这是文字转语音评估的基准：
-
-<div align="center">
-    <img src="../assets/Elo.jpg" alt="TTS-Arena2 Ranking" style="width: 75%;" />
-</div>
-
-### **语音控制**
-OpenAudio S1 **支持多种情感、语调和特殊标记**来增强语音合成效果：
-
-- **基础情感**：
+@misc{liao2026fishaudios2technical,
+      title={Fish Audio S2 Technical Report}, 
+      author={Shijia Liao and Yuxuan Wang and Songting Liu and Yifan Cheng and Ruoyi Zhang and Tianyu Li and Shidong Li and Yisheng Zheng and Xingwei Liu and Qingzheng Wang and Zhizhuo Zhou and Jiahua Liu and Xin Chen and Dawei Han},
+      year={2026},
+      eprint={2603.08823},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD},
+      url={https://arxiv.org/abs/2603.08823}, 
+}
 ```
-(生气) (伤心) (兴奋) (惊讶) (满意) (高兴) 
-(害怕) (担心) (沮丧) (紧张) (失望) (沮丧)
-(共情) (尴尬) (厌恶) (感动) (自豪) (放松)
-(感激) (自信) (感兴趣) (好奇) (困惑) (快乐)
-```
-
-- **高级情感**：
-```
-(鄙视) (不高兴) (焦虑) (歇斯底里) (漠不关心) 
-(不耐烦) (内疚) (轻蔑) (恐慌) (愤怒) (不情愿)
-(渴望) (不赞成) (否定) (否认) (惊讶) (严肃)
-(讽刺) (和解) (安慰) (真诚) (冷笑)
-(犹豫) (让步) (痛苦) (尴尬) (开心)
-```
-
-（现在支持英语、中文和日语，更多语言即将推出！）
-
-- **语调标记**：
-```
-(匆忙的语调) (大喊) (尖叫) (耳语) (轻声)
-```
-
-- **特殊音效**：
-```
-(笑) (轻笑) (抽泣) (大哭) (叹气) (喘气)
-(呻吟) (群体笑声) (背景笑声) (观众笑声)
-```
-
-您还可以使用 Ha,ha,ha 来控制，还有许多其他用法等待您自己探索。
-
-### **两种模型类型**
-
-我们提供两种模型变体以满足不同需求：
-
-- **OpenAudio S1 (40亿参数)**：我们功能齐全的旗舰模型，可在 [fish.audio](https://fish.audio) 上使用，提供最高质量的语音合成和所有高级功能。
-
-- **OpenAudio S1-mini (5亿参数)**：具有核心功能的蒸馏版本，可在 [Hugging Face Space](https://huggingface.co/spaces/fishaudio/openaudio-s1-mini) 上使用，针对更快推理进行优化，同时保持出色的质量。
-
-S1 和 S1-mini 都集成了在线人类反馈强化学习 (RLHF)。
-
-## **功能特性**
-
-1. **零样本和少样本 TTS：** 输入 10 到 30 秒的语音样本即可生成高质量的 TTS 输出。**详细指南请参见 [语音克隆最佳实践](https://docs.fish.audio/text-to-speech/voice-clone-best-practices)。**
-
-2. **多语言和跨语言支持：** 只需复制粘贴多语言文本到输入框即可——无需担心语言问题。目前支持英语、日语、韩语、中文、法语、德语、阿拉伯语和西班牙语。
-
-3. **无音素依赖：** 该模型具有强大的泛化能力，不依赖音素进行 TTS。它可以处理任何语言文字的文本。
-
-4. **高度准确：** 在 Seed-TTS Eval 中实现低字符错误率 (CER) 约 0.4% 和词错误率 (WER) 约 0.8%。
-
-5. **快速：** 通过 fish-tech 加速，在 Nvidia RTX 4060 笔记本电脑上实时因子约为 1:5，在 Nvidia RTX 4090 上约为 1:15。
-
-6. **WebUI 推理：** 具有易于使用的基于 Gradio 的网络界面，兼容 Chrome、Firefox、Edge 和其他浏览器。
-
-7. **GUI 推理：** 提供与 API 服务器无缝配合的 PyQt6 图形界面。支持 Linux、Windows 和 macOS。[查看 GUI](https://github.com/AnyaCoder/fish-speech-gui)。
-
-8. **部署友好：** 轻松设置推理服务器，原生支持 Linux、Windows（MacOS 即将推出），最小化速度损失。
-
-## **媒体和演示**
-
-<!-- <div align="center"> -->
-
-<h3><strong>社交媒体</strong></h3>
-<a href="https://x.com/FishAudio/status/1929915992299450398" target="_blank">
-    <img src="https://img.shields.io/badge/𝕏-最新演示-black?style=for-the-badge&logo=x&logoColor=white" alt="Latest Demo on X" />
-</a>
-
-<h3><strong>互动演示</strong></h3>
-
-<a href="https://fish.audio" target="_blank">
-    <img src="https://img.shields.io/badge/Fish_Audio-试用_OpenAudio_S1-blue?style=for-the-badge" alt="Try OpenAudio S1" />
-</a>
-<a href="https://huggingface.co/spaces/fishaudio/openaudio-s1-mini" target="_blank">
-    <img src="https://img.shields.io/badge/Hugging_Face-试用_S1_Mini-yellow?style=for-the-badge" alt="Try S1 Mini" />
-</a>
-
-<h3><strong>视频展示</strong></h3>
-<div align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SYuPvd7m06A" title="OpenAudio S1 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-## **文档**
-
-### 快速开始
-- [构建环境](install.md) - 设置您的开发环境
-- [推理指南](inference.md) - 运行模型并生成语音
-
-## **社区和支持**
-
-- **Discord：** 加入我们的 [Discord 社区](https://discord.gg/Es5qTB9BcN)
-- **网站：** 访问 [OpenAudio.com](https://openaudio.com) 获取最新更新
-- **在线试用：** [Fish Audio Playground](https://fish.audio)

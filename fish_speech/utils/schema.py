@@ -69,7 +69,7 @@ class ServeReferenceAudio(BaseModel):
         ):  # Check if audio is a string (Base64)
             try:
                 values["audio"] = base64.b64decode(audio)
-            except Exception as e:
+            except Exception:
                 # If the audio is not a valid base64 string, we will just ignore it and let the server handle it
                 pass
         return values
@@ -80,9 +80,11 @@ class ServeReferenceAudio(BaseModel):
 
 class ServeTTSRequest(BaseModel):
     text: str
-    chunk_length: Annotated[int, conint(ge=100, le=300, strict=True)] = 200
+    chunk_length: Annotated[int, conint(ge=100, le=1000, strict=True)] = 200
     # Audio format
-    format: Literal["wav", "pcm", "mp3"] = "wav"
+    format: Literal["wav", "pcm", "mp3", "opus"] = "wav"
+    # Latency mode (used by api.fish.audio; "normal" or "balanced")
+    latency: Literal["normal", "balanced"] = "normal"
     # References audios for in-context learning
     references: list[ServeReferenceAudio] = []
     # Reference id
@@ -103,3 +105,34 @@ class ServeTTSRequest(BaseModel):
     class Config:
         # Allow arbitrary types for pytorch related types
         arbitrary_types_allowed = True
+
+
+class AddReferenceRequest(BaseModel):
+    id: str = Field(..., min_length=1, max_length=255, pattern=r"^[a-zA-Z0-9\-_ ]+$")
+    audio: bytes
+    text: str = Field(..., min_length=1)
+
+
+class AddReferenceResponse(BaseModel):
+    success: bool
+    message: str
+    reference_id: str
+
+
+class ListReferencesResponse(BaseModel):
+    success: bool
+    reference_ids: list[str]
+    message: str = "Success"
+
+
+class DeleteReferenceResponse(BaseModel):
+    success: bool
+    message: str
+    reference_id: str
+
+
+class UpdateReferenceResponse(BaseModel):
+    success: bool
+    message: str
+    old_reference_id: str
+    new_reference_id: str

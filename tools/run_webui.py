@@ -24,12 +24,12 @@ def parse_args():
     parser.add_argument(
         "--llama-checkpoint-path",
         type=Path,
-        default="checkpoints/openaudio-s1-mini",
+        default="checkpoints/s2-pro",
     )
     parser.add_argument(
         "--decoder-checkpoint-path",
         type=Path,
-        default="checkpoints/openaudio-s1-mini/codec.pth",
+        default="checkpoints/s2-pro/codec.pth",
     )
     parser.add_argument("--decoder-config-name", type=str, default="modded_dac_vq")
     parser.add_argument("--device", type=str, default="cuda")
@@ -49,6 +49,9 @@ if __name__ == "__main__":
     if torch.backends.mps.is_available():
         args.device = "mps"
         logger.info("mps is available, running on mps.")
+    elif torch.xpu.is_available():
+        args.device = "xpu"
+        logger.info("XPU is available, running on XPU.")
     elif not torch.cuda.is_available():
         logger.info("CUDA is not available, running on CPU.")
         args.device = "cpu"
@@ -101,4 +104,4 @@ if __name__ == "__main__":
     inference_fct = get_inference_wrapper(inference_engine)
 
     app = build_app(inference_fct, args.theme)
-    app.launch(show_api=True)
+    app.launch()

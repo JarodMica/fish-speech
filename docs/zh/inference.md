@@ -1,15 +1,13 @@
 # 推理
 
-由于声码器模型已更改，您需要比以前更多的 VRAM，建议使用 12GB 进行流畅推理。
-
-我们支持命令行、HTTP API 和 WebUI 进行推理，您可以选择任何您喜欢的方法。
+Fish Audio S2 模型需要较大的显存，我们推荐您使用至少24GB的GPU进行推理。
 
 ## 下载权重
 
 首先您需要下载模型权重：
 
 ```bash
-huggingface-cli download fishaudio/openaudio-s1-mini --local-dir checkpoints/openaudio-s1-mini
+hf download fishaudio/s2-pro --local-dir checkpoints/s2-pro
 ```
 
 ## 命令行推理
@@ -17,30 +15,30 @@ huggingface-cli download fishaudio/openaudio-s1-mini --local-dir checkpoints/ope
 !!! note
     如果您计划让模型随机选择音色，可以跳过此步骤。
 
-### 1. 从参考音频获取 VQ 令牌
+### 1. 从参考音频获取 VQ tokens
 
 ```bash
 python fish_speech/models/dac/inference.py \
-    -i "ref_audio_name.wav" \
-    --checkpoint-path "checkpoints/openaudio-s1-mini/codec.pth"
+    -i "test.wav" \
+    --checkpoint-path "checkpoints/s2-pro/codec.pth"
 ```
 
 您应该会得到一个 `fake.npy` 和一个 `fake.wav`。
 
-### 2. 从文本生成语义令牌：
+### 2. 从文本生成 Semantic tokens：
 
 ```bash
 python fish_speech/models/text2semantic/inference.py \
     --text "您想要转换的文本" \
     --prompt-text "您的参考文本" \
     --prompt-tokens "fake.npy" \
-    --compile
+    # --compile
 ```
 
 此命令将在工作目录中创建一个 `codes_N` 文件，其中 N 是从 0 开始的整数。
 
 !!! note
-    您可能希望使用 `--compile` 来融合 CUDA 内核以实现更快的推理（~30 令牌/秒 -> ~500 令牌/秒）。
+    您可能希望使用 `--compile` 来融合 CUDA 内核以实现更快的推理，但是我们更推荐您使用我们sglang的推理加速优化。
     相应地，如果您不计划使用加速，可以注释掉 `--compile` 参数。
 
 !!! info
@@ -48,55 +46,53 @@ python fish_speech/models/text2semantic/inference.py \
 
 ### 3. 从语义令牌生成声音：
 
-!!! warning "未来警告"
-    我们保留了从原始路径（tools/vqgan/inference.py）访问接口的能力，但此接口可能在后续版本中被删除，因此请尽快更改您的代码。
-
 ```bash
 python fish_speech/models/dac/inference.py \
     -i "codes_0.npy" \
 ```
 
-## HTTP API 推理
-
-我们提供HTTP API进行推理。您可以使用以下命令启动服务器：
-
-```bash
-python -m tools.api_server \
-    --listen 0.0.0.0:8080 \
-    --llama-checkpoint-path "checkpoints/openaudio-s1-mini" \
-    --decoder-checkpoint-path "checkpoints/openaudio-s1-mini/codec.pth" \
-    --decoder-config-name modded_dac_vq
-```
-
-> 如果您想要加速推理，可以添加 `--compile` 参数。
-
-之后，您可以在 http://127.0.0.1:8080/ 查看和测试API。
-
-## GUI 推理 
-[下载客户端](https://github.com/AnyaCoder/fish-speech-gui/releases)
+之后你会得到一个fake.wav文件。
 
 ## WebUI 推理
 
-您可以使用以下命令启动WebUI：
+### 1. Gradio WebUI
+
+为了保持兼容，我们保留了以往的Gradio WebUI。
 
 ```bash
-python -m tools.run_webui \
-    --llama-checkpoint-path "checkpoints/openaudio-s1-mini" \
-    --decoder-checkpoint-path "checkpoints/openaudio-s1-mini/codec.pth" \
-    --decoder-config-name modded_dac_vq
+python tools/run_webui.py # --compile 如果你需要加速的话
 ```
 
-或者简单地
+### 2. Awesome WebUI
+
+Awesome WebUI 是一个基于 TypeScript 开发的现代化 Web 界面，提供更丰富的功能和更好的交互体验。
+
+**构建 WebUI：**
+
+您需要先在本地或者服务器上安装 Node.js 和 npm。
+
+1. 进入 `awesome_webui` 目录：
+   ```bash
+   cd awesome_webui
+   ```
+2. 安装依赖：
+   ```bash
+   npm install
+   ```
+3. 构建 WebUI：
+   ```bash
+   npm run build
+   ```
+
+**启动后端服务器：**
+
+WebUI 构建完成后，返回项目根目录，启动 API 服务器：
 
 ```bash
-python -m tools.run_webui
+python tools/api_server.py --listen 0.0.0.0:8888 --compile
 ```
-> 如果您想要加速推理，可以添加 `--compile` 参数。
 
-!!! note
-    您可以提前将标签文件和参考音频文件保存到主目录的 `references` 文件夹中（需要自己创建），这样就可以在WebUI中直接调用它们。
+**访问：**
 
-!!! note
-    您可以使用Gradio环境变量，如 `GRADIO_SHARE`、`GRADIO_SERVER_PORT`、`GRADIO_SERVER_NAME` 来配置WebUI。
-
-尽情享受吧！
+在服务器启动后，您可以通过浏览器访问以下地址体验：
+`http://localhost:8888/ui`

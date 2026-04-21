@@ -1,171 +1,192 @@
-# OpenAudio (구 Fish-Speech)
+<div align="center">
+<h1>Fish Speech</h1>
+
+<p><a href="../en/">English</a> | <a href="../zh/">简体中文</a> | <a href="../pt/">Portuguese</a> | <a href="../ja/">日本語</a> | <strong>한국어</strong> | <a href="../ar/">العربية</a> | <a href="../es/">Español</a></p>
+
+<a href="https://www.producthunt.com/products/fish-speech?embed=true&utm_source=badge-top-post-badge&utm_medium=badge&utm_source=badge-fish&#0045;audio&#0045;s1" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=1023740&theme=light&period=daily&t=1761164814710" alt="Fish&#0032;Audio&#0032;S1 - Expressive&#0032;Voice&#0032;Cloning&#0032;and&#0032;Text&#0045;to&#0045;Speech | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+<a href="https://trendshift.io/repositories/7014" target="_blank">
+    <img src="https://trendshift.io/api/badge/repositories/7014" alt="fishaudio%2Ffish-speech | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
+</a>
+</div>
+
+<br>
 
 <div align="center">
+    <img src="https://count.getloli.com/get/@fish-speech?theme=asoul" /><br>
+</div>
+
+<br>
 
 <div align="center">
-
-<img src="../assets/opena### **두 가지 모델 유형**
-
-다양한 요구 사항에 맞는 두 가지 모델 변형을 제공합니다：
-
-- **OpenAudio S1 (40억 매개변수)**：[fish.audio](https://fish.audio)에서 이용 가능한 모든 기능을 갖춘 플래그십 모델로, 모든 고급 기능을 갖춘 최고 품질의 음성 합성을 제공합니다.
-
-- **OpenAudio S1-mini (5억 매개변수)**：핵심 기능을 갖춘 경량화 버전으로, [Hugging Face Space](https://huggingface.co/spaces/fishaudio/openaudio-s1-mini)에서 이용 가능하며, 우수한 품질을 유지하면서 더 빠른 추론을 위해 최적화되었습니다.
-
-S1과 S1-mini 모두 온라인 인간 피드백 강화 학습(RLHF)이 통합되어 있습니다。t="OpenAudio" style="display: block; margin: 0 auto; width: 35%;"/>
-
+    <a target="_blank" href="https://discord.gg/Es5qTB9BcN">
+        <img alt="Discord" src="https://img.shields.io/discord/1214047546020728892?color=%23738ADB&label=Discord&logo=discord&logoColor=white&style=flat-square"/>
+    </a>
+    <a target="_blank" href="https://hub.docker.com/r/fishaudio/fish-speech">
+        <img alt="Docker" src="https://img.shields.io/docker/pulls/fishaudio/fish-speech?style=flat-square&logo=docker"/>
+    </a>
+    <a target="_blank" href="https://pd.qq.com/s/bwxia254o">
+      <img alt="QQ Channel" src="https://img.shields.io/badge/QQ-blue?logo=tencentqq">
+    </a>
 </div>
 
-<strong>고급 텍스트-음성 변환 모델 시리즈</strong>
-
-<div>
-<a target="_blank" href="https://discord.gg/Es5qTB9BcN">
-<img alt="Discord" src="https://img.shields.io/discord/1214047546020728892?color=%23738ADB&label=Discord&logo=discord&logoColor=white&style=flat-square"/>
-</a>
-<a target="_blank" href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=jCKlUP7QgSm9kh95UlBoYv6s1I-Apl1M&authKey=xI5ttVAp3do68IpEYEalwXSYZFdfxZSkah%2BctF5FIMyN2NqAa003vFtLqJyAVRfF&noverify=0&group_code=593946093">
-<img alt="QQ" src="https://img.shields.io/badge/QQ Group-%2312B7F5?logo=tencent-qq&logoColor=white&style=flat-square"/>
-</a>
-<a target="_blank" href="https://hub.docker.com/r/fishaudio/fish-speech">
-<img alt="Docker" src="https://img.shields.io/docker/pulls/fishaudio/fish-speech?style=flat-square&logo=docker"/>
-</a>
+<div align="center">
+    <a target="_blank" href="https://huggingface.co/fishaudio/s2">
+        <img alt="HuggingFace Model" src="https://img.shields.io/badge/🤗%20-models-orange"/>
+    </a>
+    <a target="_blank" href="https://fish.audio/blog/fish-audio-open-sources-s2/">
+        <img alt="Fish Audio Blog" src="https://img.shields.io/badge/Blog-Fish_Audio_S2-1f7a8c?style=flat-square&logo=readme&logoColor=white"/>
+    </a>
+    <a target="_blank" href="https://arxiv.org/abs/2603.08823">
+        <img alt="Paper | Technical Report" src="https://img.shields.io/badge/Paper-Technical_Report-b31b1b?style=flat-square"/>
+    </a>
 </div>
 
-<strong>지금 체험:</strong> <a href="https://fish.audio">Fish Audio Playground</a> | <strong>자세히 알아보기:</strong> <a href="https://openaudio.com">OpenAudio 웹사이트</a>
+!!! info "라이선스 공지"
+    이 코드베이스 및 관련 모델 가중치는 **FISH AUDIO RESEARCH LICENSE** 하에 릴리스되었습니다. 자세한 내용은 [LICENSE](https://github.com/fishaudio/fish-speech/blob/main/LICENSE)를 참조하십시오.
 
-</div>
+!!! warning "법적 면책 조항"
+    코드베이스의 불법적인 사용에 대해 당사는 어떠한 책임도 지지 않습니다. DMCA 및 기타 관련 법률에 관한 현지 규정을 참조하십시오.
+
+## 빠른 시작
+
+### 문서로 바로 시작하기
+
+Fish Audio S2 공식 문서입니다. 아래 링크에서 바로 시작할 수 있습니다.
+
+- [설치](https://speech.fish.audio/ko/install/)
+- [커맨드라인 추론](https://speech.fish.audio/ko/inference/)
+- [WebUI 추론](https://speech.fish.audio/ko/inference/)
+- [서버 추론](https://speech.fish.audio/ko/server/)
+- [Docker 설정](https://speech.fish.audio/ko/install/)
+
+> [!IMPORTANT]
+> **SGLang 서버는 [SGLang-Omni README](https://github.com/sgl-project/sglang-omni/blob/main/sglang_omni/models/fishaudio_s2_pro/README.md)를 참고하세요.**
+
+### LLM Agent 가이드
+
+```
+https://speech.fish.audio/ko/install/ 문서를 따라 Fish Audio S2를 설치하고 구성하세요.
+```
+
+## Fish Audio S2
+**오픈 소스와 클로즈드 소스 모두에서 가장 뛰어난 텍스트 음성 변환 시스템**
+
+Fish Audio S2는 [Fish Audio](https://fish.audio/)가 개발한 최신 모델입니다. 약 50개 언어, 1,000만 시간 이상의 오디오 데이터로 학습되었고, 강화학습 정렬과 Dual-Autoregressive 아키텍처를 결합해 자연스럽고 사실적이며 감정 표현이 풍부한 음성을 생성합니다.
+
+S2는 `[laugh]`, `[whispers]`, `[super happy]` 같은 자연어 태그를 사용해 운율과 감정을 문장 내부에서 세밀하게 제어할 수 있으며, 멀티 화자/멀티 턴 생성도 네이티브로 지원합니다.
+
+실시간 데모는 [Fish Audio 웹사이트](https://fish.audio/)에서, 자세한 내용은 [블로그 글](https://fish.audio/blog/fish-audio-open-sources-s2/)과 [기술 보고서](https://arxiv.org/abs/2603.08823)에서 확인할 수 있습니다.
+
+### 모델 변형
+
+| 모델 | 크기 | 가용성 | 설명 |
+|------|------|-------------|-------------|
+| S2-Pro | 4B 매개변수 | [HuggingFace](https://huggingface.co/fishaudio/s2-pro) | 최고 수준의 품질과 안정성을 제공하는 풀기능 플래그십 모델 |
+
+모델 상세는 [기술 보고서](https://arxiv.org/abs/2411.01156)를 참고하세요.
+
+## 벤치마크 결과
+
+| 벤치마크 | Fish Audio S2 |
+|------|------|
+| Seed-TTS Eval — WER (중국어) | **0.54%** (전체 최고) |
+| Seed-TTS Eval — WER (영어) | **0.99%** (전체 최고) |
+| Audio Turing Test (지시 포함) | **0.515** 사후 평균 |
+| EmergentTTS-Eval — 승률 | **81.88%** (전체 최고) |
+| Fish Instruction Benchmark — TAR | **93.3%** |
+| Fish Instruction Benchmark — 품질 | **4.51 / 5.0** |
+| 다국어 (MiniMax Testset) — 최고 WER | **24개 언어 중 11개** |
+| 다국어 (MiniMax Testset) — 최고 SIM | **24개 언어 중 17개** |
+
+Seed-TTS Eval에서 S2는 클로즈드 소스 시스템을 포함한 전체 비교 모델 중 가장 낮은 WER를 기록했습니다: Qwen3-TTS (0.77/1.24), MiniMax Speech-02 (0.99/1.90), Seed-TTS (1.12/2.25). Audio Turing Test에서는 0.515를 기록해 Seed-TTS (0.417) 대비 24%, MiniMax-Speech (0.387) 대비 33% 높았습니다. EmergentTTS-Eval에서는 파라언어 표현(91.61%), 의문문(84.41%), 구문 복잡도(83.39%)에서 특히 강한 성능을 보였습니다.
+
+## 주요 특징
+
+<img src="../assets/totalability.png" width=200%>
+
+### 자연어 기반 세밀한 인라인 제어
+
+Fish Audio S2는 텍스트의 특정 단어 또는 구문 위치에 자연어 지시를 직접 삽입해 음성 생성을 국소적으로 제어할 수 있습니다. 고정된 사전 정의 태그에 의존하는 대신, S2는 [whisper in small voice], [professional broadcast tone], [pitch up] 같은 자유 형식 텍스트 설명을 받아 단어 수준의 개방형 표현 제어를 지원합니다.
+
+### Dual-Autoregressive 아키텍처
+
+S2는 decoder-only Transformer와 RVQ 기반 오디오 코덱(10 codebooks, 약 21 Hz 프레임레이트)을 결합합니다. Dual-AR은 생성 과정을 두 단계로 나눕니다.
+
+- **Slow AR**: 시간축을 따라 동작하며 주 semantic codebook을 예측
+- **Fast AR**: 각 시점에서 나머지 9개 residual codebook을 생성해 세밀한 음향 디테일을 복원
+
+이 비대칭 설계(시간축 4B 파라미터, 깊이축 400M 파라미터)는 음질을 유지하면서 추론 효율을 높입니다.
+
+### 강화학습 정렬
+
+S2는 후학습 정렬을 위해 Group Relative Policy Optimization(GRPO)을 사용합니다. 학습 데이터 필터링/라벨링에 쓰인 동일한 모델을 RL 보상 모델로 재사용해, 사전학습 데이터 분포와 후학습 목표 간의 분포 불일치를 줄였습니다. 보상 신호는 의미 정확도, 지시 준수도, 음향 선호 점수, 음색 유사도를 함께 반영합니다.
+
+### SGLang 기반 프로덕션 스트리밍
+
+Dual-AR 구조는 표준 자기회귀 LLM과 구조적으로 동형이기 때문에, S2는 SGLang의 LLM 서빙 최적화를 그대로 활용합니다. 예: continuous batching, paged KV cache, CUDA graph replay, RadixAttention 기반 prefix caching.
+
+NVIDIA H200 단일 GPU 기준:
+
+- **실시간 계수(RTF):** 0.195
+- **첫 오디오 출력까지 시간:** 약 100 ms
+- **처리량:** RTF 0.5 미만 유지 시 3,000+ acoustic tokens/s
+
+### 다국어 지원
+
+Fish Audio S2는 음소나 언어별 전처리 없이 고품질 다국어 텍스트 음성 변환을 지원합니다. 포함 사항:
+
+**영어, 중국어, 일본어, 한국어, 아랍어, 독일어, 프랑스어...**
+
+**그리고 더 많이!**
+
+목록은 계속 확장되고 있습니다. 최신 릴리스는 [Fish Audio](https://fish.audio/)를 확인하세요.
+
+### 네이티브 멀티 화자 생성
+
+<img src="../assets/chattemplate.png" width=200%>
+
+Fish Audio S2는 사용자가 여러 화자가 포함된 참조 오디오를 업로드할 수 있도록 하며, 모델은 `<|speaker:i|>` 토큰을 통해 각 화자의 특징을 처리합니다. 그런 다음 화자 ID 토큰으로 모델의 성능을 제어하여 한 번의 생성으로 여러 화자를 포함할 수 있습니다. 이전처럼 각 화자마다 별도로 참조 오디오를 업로드하고 음성을 생성할 필요가 없습니다.
+
+### 멀티 턴 대화 생성
+
+모델 컨텍스트의 확장 덕분에 이제 이전 정보를 활용하여 후속 생성 콘텐츠의 표현력을 높이고 콘텐츠의 자연스러움을 향상시킬 수 있습니다.
+
+### 빠른 음성 복제
+
+Fish Audio S2는 짧은 참조 샘플(일반적으로 10-30초)을 사용하여 정확한 음성 복제를 지원합니다. 모델은 음색, 말하기 스타일 및 감정적 경향을 캡처하여 추가 미세 조정 없이 사실적이고 일관된 복제 음성을 생성합니다.
+SGLang 서버 사용은 [SGLang-Omni README](https://github.com/sgl-project/sglang-omni/blob/main/sglang_omni/models/fishaudio_s2_pro/README.md) 를 참고하세요.
 
 ---
 
-!!! note "라이선스 안내"
-    이 코드베이스는 **Apache 라이선스** 하에 배포되며, 모든 모델 가중치는 **CC-BY-NC-SA-4.0 라이선스** 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE)를 참조하세요.
+## 크레딧
 
-!!! warning "법적 면책조항"
-    코드베이스의 불법적인 사용에 대해서는 일체 책임을 지지 않습니다. 귀하의 지역의 DMCA 및 기타 관련 법률을 참고하시기 바랍니다.
+- [VITS2 (daniilrobnikov)](https://github.com/daniilrobnikov/vits2)
+- [Bert-VITS2](https://github.com/fishaudio/Bert-VITS2)
+- [GPT VITS](https://github.com/innnky/gpt-vits)
+- [MQTTS](https://github.com/b04901014/MQTTS)
+- [GPT Fast](https://github.com/pytorch-labs/gpt-fast)
+- [GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS)
+- [Qwen3](https://github.com/QwenLM/Qwen3)
 
-## **소개**
+## 기술 보고서
+```bibtex
+@misc{fish-speech-v1.4,
+      title={Fish-Speech: Leveraging Large Language Models for Advanced Multilingual Text-to-Speech Synthesis},
+      author={Shijia Liao and Yuxuan Wang and Tianyu Li and Yifan Cheng and Ruoyi Zhang and Rongzhi Zhou and Yijin Xing},
+      year={2024},
+      eprint={2411.01156},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD},
+      url={https://arxiv.org/abs/2411.01156},
+}
 
-저희는 **OpenAudio**로의 브랜드 변경을 발표하게 되어 기쁩니다. Fish-Speech를 기반으로 하여 상당한 개선과 새로운 기능을 추가한 새로운 고급 텍스트-음성 변환 모델 시리즈를 소개합니다.
-
-**Openaudio-S1-mini**: [블로그](https://openaudio.com/blogs/s1); [동영상](https://www.youtube.com/watch?v=SYuPvd7m06A); [Hugging Face](https://huggingface.co/fishaudio/openaudio-s1-mini);
-
-**Fish-Speech v1.5**: [동영상](https://www.bilibili.com/video/BV1EKiDYBE4o/); [Hugging Face](https://huggingface.co/fishaudio/fish-speech-1.5);
-
-## **주요 특징**
-
-### **뛰어난 TTS 품질**
-
-Seed TTS 평가 지표를 사용하여 모델 성능을 평가한 결과, OpenAudio S1은 영어 텍스트에서 **0.008 WER**과 **0.004 CER**을 달성하여 이전 모델보다 현저히 향상되었습니다. (영어, 자동 평가, OpenAI gpt-4o-전사 기반, 화자 거리는 Revai/pyannote-wespeaker-voxceleb-resnet34-LM 사용)
-
-| 모델 | 단어 오류율 (WER) | 문자 오류율 (CER) | 화자 거리 |
-|:-----:|:--------------------:|:-------------------------:|:----------------:|
-| **S1** | **0.008** | **0.004** | **0.332** |
-| **S1-mini** | **0.011** | **0.005** | **0.380** |
-
-### **TTS-Arena2 최고 모델**
-
-OpenAudio S1은 [TTS-Arena2](https://arena.speechcolab.org/)에서 **#1 순위**를 달성했습니다. 이는 텍스트 음성 변환 평가의 기준입니다:
-
-<div align="center">
-    <img src="assets/Elo.jpg" alt="TTS-Arena2 Ranking" style="width: 75%;" />
-</div>
-
-### **음성 제어**
-OpenAudio S1은 **다양한 감정, 톤, 특수 마커를 지원**하여 음성 합성을 향상시킵니다:
-
-- **기본 감정**:
+@misc{liao2026fishaudios2technical,
+      title={Fish Audio S2 Technical Report}, 
+      author={Shijia Liao and Yuxuan Wang and Songting Liu and Yifan Cheng and Ruoyi Zhang and Tianyu Li and Shidong Li and Yisheng Zheng and Xingwei Liu and Qingzheng Wang and Zhizhuo Zhou and Jiahua Liu and Xin Chen and Dawei Han},
+      year={2026},
+      eprint={2603.08823},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD},
+      url={https://arxiv.org/abs/2603.08823}, 
+}
 ```
-(화난) (슬픈) (흥미진진한) (놀란) (만족한) (기쁜) 
-(무서워하는) (걱정하는) (속상한) (긴장한) (좌절한) (우울한)
-(공감하는) (당황한) (역겨워하는) (감동한) (자랑스러운) (편안한)
-(감사한) (자신감있는) (관심있는) (호기심있는) (혼란스러운) (즐거운)
-```
-
-- **고급 감정**:
-```
-(경멸하는) (불행한) (불안한) (히스테리컬한) (무관심한) 
-(참을성없는) (죄책감있는) (멸시하는) (공황상태의) (격분한) (마지못한)
-(열망하는) (불찬성하는) (부정적인) (부인하는) (놀란) (진지한)
-(비꼬는) (화해하는) (위로하는) (진실한) (비웃는)
-(주저하는) (굴복하는) (고통스러운) (어색한) (재미있어하는)
-```
-
-(현재 영어, 중국어, 일본어를 지원하며, 더 많은 언어가 곧 출시될 예정입니다!)
-
-- **톤 마커**:
-```
-(서두르는 톤으로) (소리치며) (비명지르며) (속삭이며) (부드러운 톤으로)
-```
-
-- **특수 음향 효과**:
-```
-(웃으며) (킥킥거리며) (흐느끼며) (크게 울며) (한숨쉬며) (헐떡이며)
-(신음하며) (군중 웃음소리) (배경 웃음소리) (관객 웃음소리)
-```
-
-Ha,ha,ha를 사용하여 제어할 수도 있으며, 여러분 스스로 탐구할 수 있는 다른 많은 사용법이 있습니다.
-
-### **두 가지 모델 유형**
-
-<div align="center">
-
-| 모델 | 크기 | 가용성 | 특징 |
-|-------|------|--------------|----------|
-| **S1** | 40억 매개변수 | [fish.audio](https://fish.audio)에서 이용 가능 | 모든 기능을 갖춘 플래그십 모델 |
-| **S1-mini** | 5억 매개변수 | huggingface [hf space](https://huggingface.co/spaces/fishaudio/openaudio-s1-mini)에서 이용 가능 | 핵심 기능을 갖춘 경량화 버전 |
-
-</div>
-
-S1과 S1-mini 모두 온라인 인간 피드백 강화 학습(RLHF)이 통합되어 있습니다.
-
-## **기능**
-
-1. **제로샷 및 퓨샷 TTS:** 10~30초의 음성 샘플을 입력하여 고품질 TTS 출력을 생성합니다. **자세한 가이드라인은 [음성 복제 모범 사례](https://docs.fish.audio/text-to-speech/voice-clone-best-practices)를 참조하세요.**
-
-2. **다국어 및 교차 언어 지원:** 다국어 텍스트를 입력 상자에 복사하여 붙여넣기만 하면 됩니다. 언어에 대해 걱정할 필요가 없습니다. 현재 영어, 일본어, 한국어, 중국어, 프랑스어, 독일어, 아랍어, 스페인어를 지원합니다.
-
-3. **음소 의존성 없음:** 이 모델은 강력한 일반화 능력을 가지고 있으며 TTS에 음소에 의존하지 않습니다. 어떤 언어 스크립트의 텍스트도 처리할 수 있습니다.
-
-4. **높은 정확도:** Seed-TTS Eval에서 약 0.4%의 낮은 문자 오류율(CER)과 약 0.8%의 단어 오류율(WER)을 달성합니다.
-
-5. **빠른 속도:** fish-tech 가속을 통해 Nvidia RTX 4060 노트북에서 실시간 계수 약 1:5, Nvidia RTX 4090에서 약 1:15를 달성합니다.
-
-6. **WebUI 추론:** Chrome, Firefox, Edge 및 기타 브라우저와 호환되는 사용하기 쉬운 Gradio 기반 웹 UI를 제공합니다.
-
-7. **GUI 추론:** API 서버와 원활하게 작동하는 PyQt6 그래픽 인터페이스를 제공합니다. Linux, Windows, macOS를 지원합니다. [GUI 보기](https://github.com/AnyaCoder/fish-speech-gui).
-
-8. **배포 친화적:** Linux, Windows (MacOS 곧 출시 예정)의 네이티브 지원으로 추론 서버를 쉽게 설정하여 속도 손실을 최소화합니다.
-
-## **미디어 및 데모**
-
-<!-- <div align="center"> -->
-
-<h3><strong>소셜 미디어</strong></h3>
-<a href="https://x.com/FishAudio/status/1929915992299450398" target="_blank">
-    <img src="https://img.shields.io/badge/𝕏-최신_데모-black?style=for-the-badge&logo=x&logoColor=white" alt="Latest Demo on X" />
-</a>
-
-<h3><strong>인터랙티브 데모</strong></h3>
-
-<a href="https://fish.audio" target="_blank">
-    <img src="https://img.shields.io/badge/Fish_Audio-OpenAudio_S1_체험-blue?style=for-the-badge" alt="Try OpenAudio S1" />
-</a>
-<a href="https://huggingface.co/spaces/fishaudio/openaudio-s1-mini" target="_blank">
-    <img src="https://img.shields.io/badge/Hugging_Face-S1_Mini_체험-yellow?style=for-the-badge" alt="Try S1 Mini" />
-</a>
-
-<h3><strong>동영상 쇼케이스</strong></h3>
-<div align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SYuPvd7m06A" title="OpenAudio S1 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-## **문서**
-
-### 빠른 시작
-- [환경 구축](install.md) - 개발 환경 설정
-- [추론 가이드](inference.md) - 모델 실행 및 음성 생성
-
-## **커뮤니티 및 지원**
-
-- **Discord:** [Discord 커뮤니티](https://discord.gg/Es5qTB9BcN)에 참여하세요
-- **웹사이트:** 최신 업데이트는 [OpenAudio.com](https://openaudio.com)을 방문하세요
-- **온라인 체험:** [Fish Audio Playground](https://fish.audio)
